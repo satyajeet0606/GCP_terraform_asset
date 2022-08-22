@@ -1,5 +1,5 @@
 project                     = "my-trfm"
-credentials                 = "abc.json"
+credentials                 = "credentials.json"
 region                      = "europe-west1"
 zone                        = "europe-west1-a"
 terraform_global_address    = "test-global-address"
