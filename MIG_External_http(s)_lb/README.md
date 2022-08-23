@@ -22,10 +22,10 @@ Sometimes it’s difficult to keep the application up and running when unexpecte
 
 | Task | Required Permission |
 | --- | --- |
-| Create | Instance Admin |
-| Add or remove firewall rules | Security Admin |
-| Create Load Balancer Components | Network Admin |
-| Create a Projet(Optional) | Project Creator |
+| **Create Instance** | Instance Admin |
+| **Add or remove firewall rules** | Security Admin |
+| **Create Load Balancer Components** | Network Admin |
+| **Create a Projet(Optional)** | Project Creator |
 
 ## Solution Diagram:
 
