@@ -4,11 +4,11 @@
 
 ## Use Case:
 
-When you configure HTTP(S) Load Balancing in Premium Tier, it uses a global external IP address and can intelligently route requests from users to the closest backend instance group or NEG, based on proximity. For example, if you set up instance groups in North America, Europe, and Asia, and attach them to a load balancer's backend service, user requests around the world are automatically sent to the VMs closest to the users, assuming the VMs pass health checks and have enough capacity (defined by the balancing mode). If the closest VMs are all unhealthy, or if the closest instance group is at capacity and another instance group is not at capacity, the load balancer automatically sends requests to the next closest region with capacity.
+<sub>When you configure HTTP(S) Load Balancing in Premium Tier, it uses a global external IP address and can intelligently route requests from users to the closest backend instance group or NEG, based on proximity. For example, if you set up instance groups in North America, Europe, and Asia, and attach them to a load balancer's backend service, user requests around the world are automatically sent to the VMs closest to the users, assuming the VMs pass health checks and have enough capacity (defined by the balancing mode). If the closest VMs are all unhealthy, or if the closest instance group is at capacity and another instance group is not at capacity, the load balancer automatically sends requests to the next closest region with capacity.</sub>
 
 ## Problem Description:
 
-Sometimes it’s difficult to keep the application up and running when unexpected volume of traffic comes in. It becomes difficult to manage the traffic and scale the application according to it. Load Balancer solves many such issues and gives the required solution to the problem.
+<sub>Sometimes it’s difficult to keep the application up and running when unexpected volume of traffic comes in. It becomes difficult to manage the traffic and scale the application according to it. Load Balancer solves many such issues and gives the required solution to the problem.</sub>
 
 ## Solution-Scope:
 ##### The above discussed problems can be solved by configuring the following.
