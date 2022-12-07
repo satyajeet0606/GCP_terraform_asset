@@ -1,1 +1,0 @@
-{"Modules":[{"Key":"backend_bucket","Source":"./modules/bucket","Dir":"modules/bucket"},{"Key":"custom-vpc","Source":"./modules/vpc","Dir":"modules/vpc"},{"Key":"global-http-lb","Source":"./modules/global-lb","Dir":"modules/global-lb"},{"Key":"managed-group","Source":"./modules/mig's","Dir":"modules/mig's"},{"Key":"","Source":"","Dir":"."}]}
