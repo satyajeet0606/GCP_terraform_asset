@@ -1,5 +1,5 @@
-credentials = "CZED.json"
-project_id  = "ms-gcp-g-i-cze-d-dev"
+credentials = "credentials.json"  //-->To be chnaged
+project_id  = "Project_id value"  //-->To be chnaged
 region      = "europe-north1"
 zone        = "europe-north1-a"
 
@@ -45,8 +45,8 @@ enable_cdn               = true
 address_type             = "EXTERNAL"
 
 #SSL 
-private_key = "Private key path"
-certificate = "SSL certificate path"
+private_key = "Private key path"     //-->To be chnaged
+certificate = "SSL certificate path" //-->To be chnaged
 
 #backend-service:
 backend_service_protocol = "HTTP"
