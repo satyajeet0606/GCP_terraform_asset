@@ -16,7 +16,7 @@ key_protection_level = "HSM"
 #owners:
 set_owners_for     = ["test-key-01", "test-key-02"]
 owners             = ["user:manjushree196@gmail.com", "user:satyajeet0606@gmail.com", ]
-set_decrypters_for = [] //-->Default value
-decrypters         = [] //-->Default value
-set_encrypters_for = [] //-->Default value
-encrypters         = [] //-->Default value
+set_decrypters_for = [] //-->Default value..can be changed if needed
+decrypters         = [] //-->Default value..can be changed if needed
+set_encrypters_for = [] //-->Default value..can be chnaged if needed
+encrypters         = [] //-->Default value..can be chnaged if needed
