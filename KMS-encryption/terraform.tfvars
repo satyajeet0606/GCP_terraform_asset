@@ -1,6 +1,6 @@
 #defaults"
-credentials = "Credential.json"
-project_id  = "lunar-subject-364714"
+credentials = "Credential.json"  //-->To be changed
+project_id  = "Project_id Value" //-->To be changed
 region      = "europe-west1"
 zone        = "europe-west1-b"
 
