@@ -15,11 +15,11 @@ key_protection_level = "HSM"
 
 #owners:
 set_owners_for     = ["mykey"]
-owners             = ["serviceAccount:service-551370288252@gs-project-accounts.iam.gserviceaccount.com"]
-set_decrypters_for = ["mykey"]                                                          //-->Default value
-decrypters         = ["user:satyajeet0606@gmail.com", "user:manjushree196@gmail.com", ] //-->Default value
-set_encrypters_for = ["mykey"]                                                          //-->Default value
-encrypters         = ["user:satyajeet0606@gmail.com", "user:manjushree196@gmail.com", ] //-->Default value
+owners             = ["serviceAccount:service-551370288252@gs-project-accounts.iam.gserviceaccount.com"]  //---> ServiceAccount associated with GCS to be entered for authorization.
+set_decrypters_for = ["mykey"]                                                          
+decrypters         = ["user:satyajeet0606@gmail.com", "user:manjushree196@gmail.com", ] 
+set_encrypters_for = ["mykey"]                                                          
+encrypters         = ["user:satyajeet0606@gmail.com", "user:manjushree196@gmail.com", ] 
 
 #bucket:
 static_bucket               = "test-bucket-06"
