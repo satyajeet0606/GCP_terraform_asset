@@ -9,7 +9,7 @@ keyring              = "mykeyring"
 location             = "us"
 crypto_keys          = ["mykey"]
 purpose              = "ENCRYPT_DECRYPT"
-key_rotation_period  = "100000s"
+key_rotation_period  = "7776000s"
 key_algorithm        = "GOOGLE_SYMMETRIC_ENCRYPTION"
 key_protection_level = "HSM"
 
