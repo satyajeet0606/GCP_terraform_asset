@@ -4,6 +4,21 @@
 Cloud Key Management Service allows you to create, import, and manage cryptographic keys and perform cryptographic operations in a single centralized cloud service. You can use these keys and perform these operations by using Cloud KMS directly, by using Cloud HSM or Cloud External Key Manager, or by using Customer-Managed Encryption Keys (CMEK) integrations within other Google Cloud services.
 
 With Cloud KMS you are the ultimate custodian of your data, you can manage cryptographic keys in the cloud in the same ways you do on-premises, and you have a provable and monitorable root of trust over your data.
+## List of CMEK-integrated services
+- A Customer-managed encryption key (CMEK) integration lets you encrypt data at rest in that service using a Cloud KMS key that you own and manage. Data protected with a CMEK key cannot be decrypted without access to that key.
+
+- A CMEK-compliant service either does not store data, or only stores data for a short period of time, such as during batch processing. Such data is encrypted using an ephemeral key that exists only in memory and is never written to disk. When the data is no longer needed, the ephemeral key is flushed from memory, and the data can't ever be accessed again. The output of a CMEK-compliant service might be stored in a service that is integrated with CMEK, such as Cloud Storage.
+
+- Your applications can use Cloud KMS in other ways. For example, you can directly encrypt application data before transmitting or storing it.
+
+**The following table lists services that integrate with Cloud KMS for software and hardware (HSM) keys.** 
+
+## Encrypting data manually using CLI
+## Decrypting data manually using CLI
+## Why to rotate Keys?
+## How often to rotate keys?
+## Rotating keys and re-encrypting data requires the following roles or permissions:
+
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Cloud KMS module that allows managing a keyring, zero or more keys in the keyring, and IAM role bindings on individual keys.
