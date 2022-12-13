@@ -63,8 +63,47 @@ Replace key with the name of the `key` to use for decryption. Replace `key-ring`
 For information on all flags and possible values, run the command with the `--help` flag.
 
 ## Why to rotate Keys?
+
+For symmetric encryption, periodically and automatically rotating keys is a recommended security practice. Some industry standards, such as [Payment Card Industry Data Security Standard (PCI DSS)](https://www.pcisecuritystandards.org/document_library?category=pcidss&document=pci_dss&utm_source=cloud.google.com&utm_medium=referral), require the regular rotation of keys.
+
+Cloud Key Management Service does not support automatic rotation of asymmetric keys. [See Considerations for asymmetric keys](https://cloud.google.com/kms/docs/key-rotation#asymmetric) below.
+
+Rotating keys provides several benefits:
+
+Limiting the number of messages encrypted with the same key version helps prevent attacks enabled by cryptanalysis. Key lifetime recommendations depend on the key's algorithm, as well as either the number of messages produced or the total number of bytes encrypted with the same key version. For example, the recommended key lifetime for symmetric encryption keys in Galois/Counter Mode (GCM) is based on the number of messages encrypted, as noted at https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-38d.pdf.
+
+In the event that a key is compromised, regular rotation limits the number of actual messages vulnerable to compromise.
+
+If you suspect that a key version is compromised, [disable](https://cloud.google.com/kms/docs/enable-disable) it and [revoke access](https://cloud.google.com/kms/docs/iam) to it as soon as possible.
+
+Regular key rotation ensures that your system is resilient to manual rotation, whether due to a security breach or the need to migrate your application to a stronger cryptographic algorithm. Validate your key rotation procedures before a real-life security incident occurs.
+
+You can also manually rotate a key, either because it is compromised, or to modify your application to use a different algorithm.
+
 ## How often to rotate keys?
+
+We recommend that you rotate keys automatically on a regular schedule. A rotation schedule defines the frequency of rotation, and optionally the date and time when the first rotation occurs. The rotation schedule can be based on either the key's age or the number or volume of messages encrypted with a key version.
+
+Some security regulations require periodic, automatic key rotation. Automatic key rotation at a defined period, such as every 90 days, increases security with minimal administrative complexity.
+
+You should also manually rotate a key if you suspect that it has been compromised, or when security guidelines require you to migrate an application to a stronger key algorithm. You can schedule a manual rotation for a date and time in the future. Manually rotating a key does not pause, modify, or otherwise impact an existing automatic rotation schedule for the key.
+
+**Note:** When you rotate a key, data encrypted with previous key versions is not automatically re-encrypted with the new key version.
+Do not rely on irregular or manual rotation as a primary component of your application's security.
+
+## Considerations for asymmetric keys
+
+Cloud KMS does not support automatic rotation for asymmetric keys, because additional steps are required before you can use the new asymmetric key version.
+
+- For asymmetric keys used for signing, you must distribute the public key portion of the new key version. Afterward, you can specify the new key version in calls to the `CryptoKeyVersions.asymmetricSign` method to create a signature, and update applications to use the new key version.
+
+- For asymmetric keys used for encryption, you must distribute and incorporate the public portion of the new key version into applications that encrypt data, and grant access to the private portion of the new key version, for applications that decrypt data.
+
 ## Rotating keys and re-encrypting data requires the following roles or permissions:
+
+| Permission | 	Default role | Purpose |
+| ---------- | -------------- | ------- |
+| cloudkms.cryptoKeys.update | Cloud KMS Admin |
 
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
