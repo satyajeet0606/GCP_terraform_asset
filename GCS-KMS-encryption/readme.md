@@ -103,8 +103,15 @@ Cloud KMS does not support automatic rotation for asymmetric keys, because addit
 
 | Permission | 	Default role | Purpose |
 | ---------- | -------------- | ------- |
-| cloudkms.cryptoKeys.update | Cloud KMS Admin |
+| cloudkms.cryptoKeys.update | Cloud KMS Admin |  Change primary key version and Change or disable auto-rotate |
+| cloudkms.cryptoKeyVersions.create | Cloud KMS Admin | Create new key version |  
+| cloudkms.cryptoKeyVersions.update | Cloud KMS Admin | Disable old key version |
+| cloudkms.cryptoKeyVersions.useToDecrypt | Cloud KMS CryptoKey Decrypter and Cloud KMS CryptoKey Encrypter/Decrypter | Use key version to decrypt data |
+| cloudkms.cryptoKeyVersions.useToEncrypt | Cloud KMS CryptoKey Encrypter and Cloud KMS CryptoKey Encrypter/Decrypter | Use key version to encrypt data |
 
+A single user with a custom role containing all of these permissions can rotate keys and re-encrypt data on their own. Users in the Cloud KMS Admin role and Cloud KMS CryptoKey Encrypter/Decrypter role can work together to rotate keys and re-encrypt data. Follow the principle of least privilege when assigning roles. For more details, see Permissions and roles.
+
+When you rotate a key, data that was encrypted with previous key versions is not automatically re-encrypted. To learn more, see decrypt and re-encrypt. Rotating a key does not automatically disable or destroy any existing key versions.
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Cloud KMS module that allows managing a keyring, zero or more keys in the keyring, and IAM role bindings on individual keys.
