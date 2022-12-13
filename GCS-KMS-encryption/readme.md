@@ -12,8 +12,48 @@ With Cloud KMS you are the ultimate custodian of your data, you can manage crypt
 - Your applications can use Cloud KMS in other ways. For example, you can directly encrypt application data before transmitting or storing it.
 
 **The following table lists services that integrate with Cloud KMS for software and hardware (HSM) keys.** 
+| **Service**                                    | **Protected with CMEK**            | **Topic**                                                                                                                                |
+|------------------------------------------ |------------------------------ |------------------------------------------------------------------------------------------------------------------------------------ |
+| AI Platform Training                       | Data on VM disks               | [Using customer-managed encryption keys](https://cloud.google.com/ai-platform/training/docs/cmek)                                    |
+| Artifact Registry                          | Data in repositories           | [Enabling customer-managed encryption keys](https://cloud.google.com/artifact-registry/docs/cmek)                                    |
+| BigQuery                                   | Data in BigQuery               | [Protecting data with Cloud KMS keys](https://cloud.google.com/bigquery/docs/customer-managed-encryption)                            |
+| Cloud Bigtable                             | Data at rest                   | [Customer-managed encryption keys (CMEK)](https://cloud.google.com/bigtable/docs/cmek)                                               |
+| Cloud Composer                             | Environment data               | [Using customer-managed encryption keys](https://cloud.google.com/composer/docs/cmek)                                                |
+| Cloud Data Fusion                          | Environment data               | [Using customer-managed encryption keys](https://cloud.google.com/data-fusion/docs/how-to/customer-managed-encryption-keys)          |
+| Cloud Functions                            | Data in Cloud Functions        | [Using customer-managed encryption keys](https://cloud.google.com/functions/docs/securing/cmek)                                      |
+| Cloud Logging                              | Data in the Log Router         | [Manage the keys that protect Log Router data](https://cloud.google.com/logging/docs/routing/managed-encryption)                     |
+| Cloud Logging                              | Data in Logging storage        | [Manage the keys that protect Logging storage data](https://cloud.google.com/logging/docs/routing/managed-encryption-storage)        |
+| Cloud Run                                  | Container image                | [Using customer-managed encryption keys with Cloud Run](https://cloud.google.com/run/docs/securing/using-cmek)                       |
+| Cloud Spanner                              | Data at rest                   | [Customer-managed encryption keys (CMEK)](https://cloud.google.com/spanner/docs/cmek)                                                |
+| Cloud SQL                                  | Data written to databases      | [Using customer-managed encryption keys](https://cloud.google.com/sql/docs/mysql/configure-cmek)                                     |
+| Cloud Storage                              | Data in storage buckets        | [Using customer-managed encryption keys](https://cloud.google.com/storage/docs/encryption/using-customer-managed-keys)               |
+| Compute Engine                             | Data on VM disks               | [Protecting resources with Cloud KMS keys](https://cloud.google.com/compute/docs/disks/customer-managed-encryption)                  |
+| Database Migration Service                 | Data written to databases      | [Using customer-managed encryption keys (CMEK)](https://cloud.google.com/sql/docs/mysql/configure-cmek)                              |
+| Dataflow                                   | Pipeline state data            | [Using customer-managed encryption keys](https://cloud.google.com/dataflow/docs/guides/customer-managed-encryption-keys)             |
+| Dataproc                                   | Data on VM disks               | [Customer-managed encryption keys](https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/customer-managed-encryption) |
+| Dataproc Metastore                         | Data at rest                   | [Using customer-managed encryption keys](https://cloud.google.com/dataproc-metastore/docs/cmek)                                      |
+| Datastream                                 | Data in transit                | [Using customer-managed encryption keys (CMEK)](https://cloud.google.com/datastream/docs/use-cmek)                                   |
+| Dialogflow CX                              | Data at rest                   | [Customer-managed encryption keys (CMEK)](https://cloud.google.com/dialogflow/cx/docs/concept/cmek)                                  |
+| Document AI                                | Data at rest and data in use   | [Customer-managed encryption keys (CMEK)](https://cloud.google.com/document-ai/docs/cmek)                                            |
+| Eventarc                                   | Data at rest                   | [Use customer-managed encryption keys (CMEK)](https://cloud.google.com/eventarc/docs/use-cmek)                                       |
+| Filestore                                  | Data at rest                   | [Encrypt data with customer-managed encryption keys](https://cloud.google.com/filestore/docs/cmek)                                   |
+| Google Distributed Cloud Edge              | Data on Edge nodes             | [Local storage security](https://cloud.google.com/distributed-cloud/edge/latest/docs/security#storage)                               |
+| Google Kubernetes Engine                   | Data on VM disks               | [Using customer-managed encryption keys (CMEK)](https://cloud.google.com/kubernetes-engine/docs/how-to/using-cmek)                   |
+| Google Kubernetes Engine                   | Application-layer Secrets      | [Application-layer Secrets encryption](https://cloud.google.com/kubernetes-engine/docs/how-to/encrypting-secrets)                    |
+| Memorystore for Redis                      | Data at rest                   | [Customer-managed encryption keys (CMEK)](https://cloud.google.com/memorystore/docs/redis/cmek)                                      |
+| Pub/Sub                                    | Data associated with topics    | [Configuring message encryption](https://cloud.google.com/pubsub/docs/cmek)                                                          |
+| Secret Manager                             | Secret payloads                | [Enabling Customer-Managed Encryption Keys (CMEK)](https://cloud.google.com/secret-manager/docs/cmek)                                |
+| Speaker ID (Restricted GA)                 | Data at rest                   | Using customer-managed encryption keys                                                                                               |
+| Vertex AI                                  | Data associated with resources | [Using customer-managed encryption keys](https://cloud.google.com/ai-platform-unified/docs/general/cmek)                             |
+| Vertex AI Workbench managed notebooks      | User data at rest              | [Customer-managed encryption keys](https://cloud.google.com/vertex-ai/docs/workbench/managed/cmek)                                   |
+| Vertex AI Workbench user-managed notebooks | Data on VM disks               | [Customer-managed encryption keys](https://cloud.google.com/vertex-ai/docs/workbench/user-managed/cmek)                              |
 
 ## Encrypting data manually using CLI
+
+Replace key with the name of the `key` to use for encryption. Replace `key-ring` with the name of the key ring where the key is located. Replace `location` with the Cloud KMS location for the key ring. Replace `file-with-data-to-encrypt` and `file-to-store-encrypted-data` with the local file paths for reading the plaintext data and saving the encrypted output.
+
+For information on all flags and possible values, run the command with the `--help` flag.
+
 ## Decrypting data manually using CLI
 ## Why to rotate Keys?
 ## How often to rotate keys?
