@@ -49,6 +49,7 @@ With Cloud KMS you are the ultimate custodian of your data, you can manage crypt
 | Vertex AI Workbench user-managed notebooks | Data on VM disks               | [Customer-managed encryption keys](https://cloud.google.com/vertex-ai/docs/workbench/user-managed/cmek)                              |
 
 ## Encrypting data manually using CLI
+![](
 
 Replace key with the name of the `key` to use for encryption. Replace `key-ring` with the name of the key ring where the key is located. Replace `location` with the Cloud KMS location for the key ring. Replace `file-with-data-to-encrypt` and `file-to-store-encrypted-data` with the local file paths for reading the plaintext data and saving the encrypted output.
 
