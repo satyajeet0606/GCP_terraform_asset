@@ -49,13 +49,19 @@ With Cloud KMS you are the ultimate custodian of your data, you can manage crypt
 | Vertex AI Workbench user-managed notebooks | Data on VM disks               | [Customer-managed encryption keys](https://cloud.google.com/vertex-ai/docs/workbench/user-managed/cmek)                              |
 
 ## Encrypting data manually using CLI
-![](
+![](images/image1.png)
 
 Replace key with the name of the `key` to use for encryption. Replace `key-ring` with the name of the key ring where the key is located. Replace `location` with the Cloud KMS location for the key ring. Replace `file-with-data-to-encrypt` and `file-to-store-encrypted-data` with the local file paths for reading the plaintext data and saving the encrypted output.
 
 For information on all flags and possible values, run the command with the `--help` flag.
 
 ## Decrypting data manually using CLI
+![](images/image2.png)
+
+Replace key with the name of the `key` to use for decryption. Replace `key-ring` with the name of the key ring where the key will be located. Replace `location` with the Cloud KMS location for the key ring. Replace `file-path-with-encrypted-data` and `file-path-to-store-plaintext` with the local file paths for reading the encrypted data and saving the decrypted output.
+
+For information on all flags and possible values, run the command with the --help flag.
+
 ## Why to rotate Keys?
 ## How often to rotate keys?
 ## Rotating keys and re-encrypting data requires the following roles or permissions:
