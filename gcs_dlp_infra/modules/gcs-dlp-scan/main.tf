@@ -23,16 +23,6 @@ resource "google_storage_bucket" "staging" {
   public_access_prevention = var.public_access_prevention
 }
 
-#non-sensitive bucket:
-resource "google_storage_bucket" "non_sensitive" {
-  name          = var.non_sensitive_bucket
-  location      = var.location
-  force_destroy = var.force_destroy
-  storage_class = var.storage_class
-
-  public_access_prevention = var.public_access_prevention
-}
-
 #sensitive bucket:
 resource "google_storage_bucket" "sensitive" {
   name          = var.sensitive_bucket
