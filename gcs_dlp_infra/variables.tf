@@ -38,21 +38,9 @@ variable "staging_bucket" {
 
 }
 
-variable "non_sensitive_bucket" {
-  type        = string
-  description = "name of the non sensitive bucket"
-
-}
-
 variable "sensitive_bucket" {
   type        = string
   description = "Name of the sensitive bucket"
-
-}
-
-variable "fucntion_bucket" {
-  type        = string
-  description = "name of the function bucket"
 
 }
 
@@ -77,12 +65,6 @@ variable "storage_class" {
 variable "public_access_prevention" {
   type        = string
   description = "whether to enforce public access prevention on this bucket"
-
-}
-
-variable "zip_function" {
-  type        = string
-  description = "name of the function zip file"
 
 }
 
