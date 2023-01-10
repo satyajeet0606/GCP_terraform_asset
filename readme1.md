@@ -1,1 +1,0 @@
-Manjushree got a pimple..!!!
